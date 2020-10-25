@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.utils import timezone
+from .models import Propiedad
 
 
-def post_list(request):
-    return render(request, '/propiedad.html', {})
+def lista_propiedades(request):
+	objetos = Propiedad.objects.all()
+	return render(request, 'propiedad/propiedades.html',{'objetos':objetos})

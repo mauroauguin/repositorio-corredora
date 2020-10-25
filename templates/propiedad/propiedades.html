@@ -1,13 +1,64 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<title></title>
+</head>
 <body>
-    <p>Hi there!</p>
+
+	<p>Hi there!</p>
     <p>It works!</p>
-    <p> {% for objeto in objetos %}
+    
 
-    	{{objeto}}
-    	
-    {% endfor %}
+<div class="container">
+  <h2>Propiedades</h2>          
+  <table class="table table-striped table-bordered ">
+    <thead>
+      <tr>
+        <th>Propietario</th>
+        <th>Dirección</th>
+        <th>Dormitorios</th>
+        <th>Baños</th>
+        <th>Estacionamiento</th>
+        <th>Bodega</th>
+        <th>Pisos</th>
+        <th>Huéspedes</th>
+        <th>Gasto Común</th>
+        <th>Comuna</th>
+        <th>Región</th>
+        <th>Tipo</th>
+        <th>Fecha de creación</th>
 
-     </p>
+      </tr>
+    </thead>
+    <tbody>
+
+    	{%for objeto in objetos%}
+
+      <tr>
+        <td>{{objeto.propietario}}</td>
+        <td>{{objeto.direccion}}</td>
+        <td>{{objeto.dormitorios}}</td>
+        <td>{{objeto.baños}}</td>
+        <td>{{objeto.estacionamiento}}</td>
+        <td>{{objeto.bodega}}</td>
+        <td>{{objeto.pisos}}</td>
+        <td>{{objeto.huespedes}}</td>
+        <td>{{objeto.gasto_comun}}</td>
+        <td>{{objeto.comuna}}</td>
+        <td>{{objeto.region}}</td>
+        <td>{{objeto.tipo}}</td>
+        <td>{{objeto.fecha_creacion}}</td>
+        
+      </tr>
+      
+      {%endfor%}
+
+    </tbody>
+  </table>
+</div>
+
+
 </body>
 </html>

@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<title></title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-	<p>Hi there!</p>
-    <p>It works!</p>
-    
+{% block body %}
 
 <div class="container">
   <h2>Propiedades</h2>          
-  <table class="table table-striped table-bordered ">
-    <thead>
+  <table class="table table-hover">
+    <thead class="thead-dark">
       <tr>
-        <th>Propietario</th>
         <th>Dirección</th>
+        <th>Propietario</th>
         <th>Dormitorios</th>
         <th>Baños</th>
         <th>Estacionamiento</th>
@@ -32,13 +23,15 @@
 
       </tr>
     </thead>
+
     <tbody>
 
-    	{%for objeto in objetos%}
+      {%for objeto in objetos%}
 
-      <tr>
+      <tr> 
+        
+        <td><a href=" {% url 'prop_detail' pk=objeto.pk %} ">{{objeto.direccion}}</a></td>
         <td>{{objeto.propietario}}</td>
-        <td>{{objeto.direccion}}</td>
         <td>{{objeto.dormitorios}}</td>
         <td>{{objeto.baños}}</td>
         <td>{{objeto.estacionamiento}}</td>
@@ -52,13 +45,14 @@
         <td>{{objeto.fecha_creacion}}</td>
         
       </tr>
-      
+ 
       {%endfor%}
 
     </tbody>
   </table>
 </div>
 
+{% endblock body %}
 
-</body>
-</html>
+
+

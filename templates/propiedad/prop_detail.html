@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        {% if propiedad %}
+            <div class="date">
+                {{ propiedad }}
+            </div>
+        {% endif %}
+        <h2>{{ propiedad.direccion }}</h2>
+        <p>{{ propiedad.comuna|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+  <h2>Propiedades</h2>          
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Dirección</th>
+        <th>Propietario</th>
+        <th>Dormitorios</th>
+        <th>Baños</th>
+        <th>Estacionamiento</th>
+        <th>Bodega</th>
+        <th>Pisos</th>
+        <th>Huéspedes</th>
+        <th>Gasto Común</th>
+        <th>Comuna</th>
+        <th>Región</th>
+        <th>Tipo</th>
+        <th>Fecha de creación</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {%for propiedad in objetos%}
+
+      <tr> 
+        
+        <td><a href=" {% url 'detail' pk=propiedad.pk %} ">{{propiedad.direccion}}</a></td>
+        <td>{{propiedad.propietario}}</td>
+        <td>{{propiedad.dormitorios}}</td>
+        <td>{{propiedad.baños}}</td>
+        <td>{{propiedad.estacionamiento}}</td>
+        <td>{{propiedad.bodega}}</td>
+        <td>{{propiedad.pisos}}</td>
+        <td>{{propiedad.huespedes}}</td>
+        <td>{{propiedad.gasto_comun}}</td>
+        <td>{{propiedad.comuna}}</td>
+        <td>{{propiedad.region}}</td>
+        <td>{{propiedad.tipo}}</td>
+        <td>{{propiedad.fecha_creacion}}</td>
+        <td><a class="btn btn-default" href="{% url 'edit' pk=propiedad.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        
+      </tr>
+ 
+      {%endfor%}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock body %}
+
+
+
